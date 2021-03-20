@@ -1,0 +1,14 @@
+<%= bootstrap_form_for(@tinyurl) do |f| %>
+  <%= f.text_field  :url,  
+            placeholder: 'https://example.com', 
+            class: 'form-control',
+            required: true, 
+            minlength: 5 %>
+  <%= f.text_field :token, 
+                  required: true, 
+                  minlength: 1,
+                  maxlength: 30,
+                  placeholder: 'ex. myUrlToken', 
+                  class: 'form-control' %>
+  <%= f.submit "Create a tinyURL", class: 'form-control' %>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">tinyURL token</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @tinyurls.each do |tu| %>
+            <tr>
+            <td><%=tu.token %></td>
+            <td><%= link_to "Go", tu.url %></td>
+            <td><%= link_to "Info", "/#{tu.token}/info" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+</div>

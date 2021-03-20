@@ -1,0 +1,22 @@
+<div class="container">
+    <h1><strong>About: <strong><%= @tinyurl.token %><h1>
+    <p><strong>Number of visits: <strong><%=@number_of_visits %><p>
+    <p><strong>Accessed from <strong><p>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @distinct_ips.each do |ipVisit| %>
+                <tr>
+                    <td><%=ipVisit.ip_address %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <p><strong>Redirects to: <strong><p>
+    <p><%= @tinyurl.url%></p>
+    <%= link_to "Go", "/#{@tinyurl.token}", class: 'btn btn-primary' %>
+<div>

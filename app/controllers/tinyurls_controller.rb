@@ -28,6 +28,7 @@ class TinyurlsController < ApplicationController
         @tinyurl = Tinyurl.find_by(token: params[:id])
         @number_of_visits = Visit.by_token(params[:id]).count
         @distinct_ips = Visit.distinct_ips(params[:id])
+        @fulltinyurl = request.base_url + "/" + @tinyurl.token
     end
 
     private
